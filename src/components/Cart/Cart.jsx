@@ -3,10 +3,15 @@ import PizzaTotal from '../Cards/PizzaTotal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons'
 import { CartContext } from '../../context/CartContext'
+import { UserContext } from '../../context/UserContext'
 
 const Cart = () => {
   const {cart,totalCLP}=useContext(CartContext)
+  const {user}=useContext(UserContext)
   const cartTrue= cart.filter(item=>(item.add===true))
+
+  console.log(user);
+  
 
   return (
     <div className='vw-100 py-5'>
@@ -45,7 +50,7 @@ const Cart = () => {
 
             <div className="">
               <div className="">
-                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-warning btn-block btn-lg">Proceder al pago</button>
+                <button disabled={user? "":"false"} type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-warning btn-block btn-lg">Proceder al pago</button>
               </div>
             </div>
 

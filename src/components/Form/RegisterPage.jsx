@@ -23,8 +23,9 @@ const RegisterPage = () => {
   const handleSubmit = (e)=> {
     e.preventDefault()
     if (password===passConfirm && password.length>=6){
+      
       alert("Enviado con exito")
-      setUser(...{email:email, password:password, login:false})  
+      // setUser([...user,{email:email, password:password, login:false}])  
       
     } else if (password.length<6) {
       alert("Contrasena tiene que tener 6 caracteres minimo")
@@ -32,6 +33,8 @@ const RegisterPage = () => {
       alert("Contrasenas no son iguales")
     }
   }
+
+  
 
 
   return (

@@ -18,10 +18,22 @@ const LoginPage = () => {
   
   const handleSubmit = (e)=> {
     e.preventDefault()
-    const search=user.find (mail => mail.email===email)
+    // const search=user.find (mail => mail.email===email)
     
-    if (password===search.password && password.length>=6){
+    if (
+      // password===search.password &&
+      password.length>=6){
       alert("Autentificacion correcta")
+      setUser(true)
+
+        // const loginT=user.map(user =>{
+        //   if(user.email===email){
+        //     return {...user, login:true}
+        //   }
+        //   return user
+        // })
+        // setUser(loginT)
+      
   
     } else if (password.length<6) {
       alert("Contrasena tiene que tener 6 caracteres minimo")
@@ -30,7 +42,6 @@ const LoginPage = () => {
     }
   }
 
-console.log(user);
 
 
   return (
